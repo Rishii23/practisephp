@@ -13,6 +13,36 @@
 
 </head>
 <body>
+    	
+<div class="heading">
+<h2> Hello world! </h2>
+<input type="textbox">
+<input type="password">
+<button class="btn btn-primary"> Submit </button>
+
+<?php
+$a =30.5; // variable declaration
+$b=20;
+$a+=$b; 
+echo "<br> Value would be:";
+
+echo $a;
+echo "<br> Value would be:";
+echo strlen("hello"); // function to count word count.
+echo "<br> word Count would be:";
+echo str_word_count("hello world"); // function to count word count.
+echo "<br> word Count would be:";
+echo strrev("hello world"); // function to reverse String.
+echo "<br> search word  would be:";
+echo strpos("hello world","world"); // String position.
+echo "<br> replace word  would be:";
+echo str_replace("World","Hey","hello World"); // String position.
+define("rishabh",23,true); // Declaration of Constant , Case Sensetive True.!! 
+echo rishabh;
+
+?>
+</div>
+
 <div class="header">
     <h1> Test </h1>
     <?php 
