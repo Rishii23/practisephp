@@ -1,0 +1,12 @@
+.header{
+    color: rebeccapurple; 
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    
+}
+.header:hover {
+    color: rgb(202, 0, 34);
+    
+ 
+}
