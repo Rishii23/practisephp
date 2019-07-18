@@ -24,7 +24,26 @@
     echo "<br>";
 
     echo strlen("Rishabh");
+    echo "<br>";
+    if ($a <"20"){
+        echo "Value is greater 20";
+        
+    }
+    else 
+    echo "less";
     
+    echo "<br>";
+    $favcolor = "white"; // can be dynamically changed
+    switch ($favcolor)
+    {
+        case "red": echo ("color is red");
+        break;
+        case "blue": echo ("color is blue");
+        break;
+        case "green": echo ("color is green");
+        break;
+default : echo ("no color selected");
+    }
     ?>
  
     </div>
