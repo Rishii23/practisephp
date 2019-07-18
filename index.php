@@ -49,29 +49,133 @@
 default : echo ("no color selected");
     }
 ?>
-<div class="loop_concept     ">
-<?php 
-    //While Loop: The while loop executes a block of code as long as the specified condition is true.
-    echo "<br> While Loop <br>";
-    $x = 1;
- 
-while($x <= 5) {
-  echo "The number is: $x <br>";
-  $x++;
-} 
-echo "<br> Do While loop <br>";
-//The do...while loop will always execute the block of code once, it will then check the condition, and repeat the loop while the specified condition is true.
-$x = 1;
 
-do {
-    echo "The number is: $x <br>";
-    $x++;
-} while ($x <= 5);
- 
- 
- 
- ?>
+<div class="row">
+    <div class="loop_concept col-lg-4">
+    <?php 
+        //While Loop: The while loop executes a block of code as long as the specified condition is true.
+        echo "<br> While Loop <br>";
+        $x = 1;
+     
+    while($x <= 5) {
+      echo "The number is: $x <br>";
+      $x++;
+    } 
+    echo "<br> Do While loop <br>";
+    //The do...while loop will always execute the block of code once, it will then check the condition, and repeat the loop while the specified condition is true.
+    $x = 1;
+    
+    do {
+        echo "The number is: $x <br>";
+        $x++;
+    } while ($x <= 5);
+        echo "<br> for loop <br>";
+        //for (init counter; test counter; increment counter) { code to be executed }
+        for ($x = 0; $x <= 5; $x++) {
+            echo "$x <br>";
+        }
+        //The foreach loop works only on arrays, and is used to loop through each key/value pair in an array. 
+        echo "<br> foreach loop <br>";
+        
+        $colors = array ("red","blue","yellow","green");
+        foreach($colors as $value){
+            echo "$value <br>";
+        }
+      
+     ?>
      </div>
+     <div class="col-lg-4">
+     <h6> Functions Basic </h6>
+     <?php   echo "<br> Functions Addition, Sub Mul,Div <br>";
+     $a =10
+     ;
+     $b=10;
+  echo "$a + $b = " . sum($a,$b) . "<br>";
+  echo "$a - $b = " . sub($a,$b) . "<br>";
+  echo "$a * $b = " . mul($a,$b) . "<br>";
+  echo "$a / $b = " . div($a,$b) . "<br>";
+
+        function sum($x, $y) {
+            $z = $x + $y;
+            return $z;
+        }      
+        
+       
+        function sub($x, $y) {
+               $z = $x - $y;
+            return $z;
+        }        
+      
+      
+        function mul($x, $y) {
+            $z = $x * $y;
+            return $z;
+        }
+        
+      
+     
+
+        function div($x, $y) {
+            $z = $x / $y;
+            return $z;
+        }
+        
+      
+     
+        ?>
+         </div>
+     <div class="col-lg-4">
+<!-- If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+array() function is used to create array.    -->
+<h5>  Indexed Array </h5>
+     <?php
+$cars = array("Volvo", "BMW", "Toyota"); 
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+// Count Elements in array
+
+echo ("<p> <br> count Array elements <br> </p>");  
+echo count($cars);
+?>
+<p> Printing Values from loop </p>
+<?php
+
+$arrlength =count($cars);
+for ($x=0; $x < $arrlength; $x++)
+{
+    echo $cars[$x];
+    echo "<br> ";
+}
+
+?>
+
+
+<h5>  Associative Array </h5>
+<p>are arrays that use named keys that you assign to them. </p>
+<br>
+<?php
+
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+echo "Peter is " . $age['Peter'] . " years old <br>.";
+echo " <br> by ForEach Loop using Key=>Value; <br> Key-Value Pairs in foreach loop. <br>       ";
+
+//using Key=>Value; Key-Value Pairs in foreach loop.
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach($age as $x => $x_value) {
+    echo "Key=" . $x . ", Value=" . $x_value;
+    echo "<br>";
+}
+?>
+
+         </div>
+         <div class="col-lg-12">
+         <h5> Sorting array elements </h5>
+         <?php 
+         $a=array('red','orange','purple');
+         ?>
+         </div>
+
+</div>
 
 </body>
 </html>
