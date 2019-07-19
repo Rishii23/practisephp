@@ -67,7 +67,7 @@ echo rishabh;
     echo "less";
     
     echo "<br>";
-    $favcolor = "white"; // can be dynamically changed
+    $favcolor = "white"; // can be changed 
     switch ($favcolor)
     {
         case "red": echo ("color is red");
@@ -205,6 +205,21 @@ foreach($age as $x => $x_value) {
          ?>
          </div>
 
+</div>
+<div class="col-lg-12">
+<h5> Sorting of array </h5>
+<div class="start">
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+sort($cars);
+
+$clength = count($cars);
+for($x = 0; $x < $clength; $x++) {
+    echo $cars[$x];
+    echo "<br>";
+}
+?>
+</div>
 </div>
 
 </body>
