@@ -10,7 +10,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-
+<script src="index.js"> </script>
 </head>
 <body>
     	
@@ -209,6 +209,7 @@ foreach($age as $x => $x_value) {
 <div class="col-lg-12">
 <h5> Sorting of array </h5>
 <div class="start">
+
 <?php
 $cars = array("Volvo", "BMW", "Toyota");
 sort($cars);
@@ -219,6 +220,20 @@ for($x = 0; $x < $clength; $x++) {
     echo "<br>";
 }
 ?>
+<section class="superGlobals">
+<div class="container">
+
+<div class="col-lg-12">
+<h3> Super Global's </h3>
+<p> 
+<?php
+echo ("Several predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.");
+
+?>
+ </p>
+</div>
+</div>
+</section>
 </div>
 </div>
 
