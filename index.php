@@ -13,12 +13,32 @@
 <script src="index.js"> </script>
 </head>
 <body>
-    	
-<div class="heading">
+    	<!-- Object & Classes -->
+    	<!-- Getter Setter Functions  -->
+    	<!-- Class Variables  -->
+    	<!-- Static Variables -->
+    	<!-- Exception Handling -->
+    	<!-- Access Class Members,(Variables/functions) -->
+    	<!--Private Public access Modifiers-->
+    	<!--Class Functions Declaration, Defination-->
+        <!--  -->
+        <!-- OOPS Concept. W.r.t PHP & Implement on Xampp -->
+        <!--  -->
+        <!-- SQL -phpmyadmin -->
+    	<!-- Read(sql Select,sql Function,sql Join Subqueries,%like) /implement/delete/update -->
+        <!--  -->
+        <!-- Impliment PHp Concept. with DB -->
+        <!--  -->
+        <!-- Model View Controller -->
+        <div class="heading">
 <h2> Hello world! </h2>
-<input type="textbox">
-<input type="password">
-<button class="btn btn-primary"> Submit </button>
+
+
+<form action="welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
 
 <?php
 $a =30.5; // variable declaration
@@ -195,8 +215,8 @@ foreach($age as $x => $x_value) {
     echo "Key=" . $x . ", Value=" . $x_value;
     echo "<br>";
 }
-?>
-
+   ?>
+ 
          </div>
          <div class="col-lg-12">
          <h5> Sorting array elements </h5>
@@ -223,11 +243,25 @@ for($x = 0; $x < $clength; $x++) {
 <section class="superGlobals">
 <div class="container">
 
-<div class="col-lg-12">
+<div class="col-lg-12"> 
 <h3> Super Global's </h3>
 <p> 
 <?php
-echo ("Several predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.");
+echo ("Several predefined variables in PHP are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.");
+echo "<br>";
+
+echo $_SERVER['PHP_SELF' ];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+// echo $_ SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+echo "<br>";
 
 ?>
  </p>

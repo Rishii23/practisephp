@@ -1,16 +1,14 @@
-.header{
-    color: rebeccapurple; 
+.header {
+    color: rebeccapurple;
     text-align: center;
     text-transform: uppercase;
     top: 50%;
-    
 }
+
 .header:hover {
     color: rgb(202, 0, 34);
-    
- 
 }
-.loop_concept
-{
+
+.loop_concept {
     padding-left: 5rem;
 }
