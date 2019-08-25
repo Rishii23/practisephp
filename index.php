@@ -42,7 +42,7 @@
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="/global.php">Super Globals</a>
+<a class="nav-link" href="/AdvPHP.php">Advance PHP</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="/form.php">Form</a>

@@ -40,10 +40,10 @@
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="/AdvPHP.php">Advance PHP</a>
+<a class="nav-link active" href="/AdvPHP.php">Advance PHP</a>
 </li>
 <li class="nav-item">
-<a class="nav-link active" href="/form.php">Form</a>
+<a class="nav-link " href="/form.php">Form</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="/test.php">test</a>
@@ -51,19 +51,42 @@
 </ul>
 </div>  
 </nav>
+<hr class="generic">
+<div class="multiArray">
+    
+    <?php
+    $cars = array
+      (
+      array("Volvo",22,18),
+      array("BMW",15,13),
+      array("Saab",5,2),
+      array("Land Rover",17,15)
+      );
+      
+    echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
+    echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".<br>";
+    echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".<br>";
+    echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".<br>";
+    ?>
+<?php 
+$friends = array(
+    array("rishabh",23,1995),
+    array("Yogesh",24,1996),
+    array("sahitya",26,1996),
+);
+for ($row =0; $row < 3 ; $row++)  {
+    echo "<p> <b> Row Number $row </b> </p>";
+    echo "<ul>";
+    
+                for ($col=0; $col<3;$col++)
+                {
+                    echo "<li>".$friends[$row][$col]."</li>";
+                }
 
-<div class="form_area">
-    <form action="form.php" method="post">
-    Name: <input type="text" name="name" ><br>
-    E-mail: <input type="text" name="email"><br>
-    <input type="submit">
-    </form>
-
-    Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
-
+    echo"</ul>";
+}  
+?>
 </div>
-
 </body>
 
 
