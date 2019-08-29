@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Index page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -290,25 +290,26 @@ for($x = 0; $x < $clength; $x++) {
 <h3> Super Global's </h3>
 <p> 
 <?php
-echo ("Several predefined variables in PHP are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.");
+echo ("Several predefined variables in PHP are superglobals, which means that they are always accessible, regardless of scope and you can access them from any function, class or file without having to do anything special.");
 echo "<br>";
 
 
-echo $_SERVER['PHP_SELF' ];
-echo "<br>";
+echo $_SERVER['PHP_SELF'];
+echo "<b> using PHP_SELF </b> <br>";
 echo $_SERVER['SERVER_NAME'];
-echo "<br>";
+echo " <b>using Server_Name </b><br>";
 echo $_SERVER['HTTP_HOST'];
-echo "<br>";
+echo "<b> using HTTP_HOST </b> <br>";
 // echo $_ SERVER['HTTP_REFERER'];
 echo "<br>";
 echo $_SERVER['HTTP_USER_AGENT'];
-echo "<br>";
+echo "<b> -Using HTTP_USER_Agent </b> <br>";
 echo $_SERVER['SCRIPT_NAME'];
-echo "<br>";
+echo " <b> -Using Script_Name </b><br>";
 
 ?>
  </p>
+
 </div>
 </div>
 </section>
