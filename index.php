@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Index page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
 <script src="index.js"> </script>
 </head>
+
 <body>
     	<!-- Object & Classes -->
     	<!-- Getter Setter Functions  -->
@@ -29,42 +30,82 @@
         <!--  -->
         <!-- Impliment PHp Concept. with DB -->
         <!--  -->
+
+        
         <!-- Model View Controller -->
-        <div class="heading">
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<a class="navbar-brand" href="/index.php">Welcome Page</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+<ul class="navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="/AdvPHP.php">Advance PHP</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/form.php">Form</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/test.php">test</a>
+</li>    
+</ul>
+</div>  
+</nav>
+
+    <div class="heading">
 <h2> Hello world! </h2>
 
 
-<form action="welcome.php" method="post">
+<form action="welcome.php" method="post" <?php echo $_SERVER['PHP_SELF'];?>>
 Name: <input type="text" name="name"><br>
 E-mail: <input type="text" name="email"><br>
 <input type="submit">
 </form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = htmlspecialchars($_REQUEST['name']); 
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
+?>
 
 <?php
 $a =30.5; // variable declaration
 $b=20;
 $a+=$b; 
-echo "<br> Value would be:";
+echo "<br> Value a = 30.5 + b= 20 would be:";
+    echo $a;
+echo "<br> strlen of Hellao would be:";
+echo strlen("hellao"); // function to count letter in word.
 
-echo $a;
-echo "<br> Value would be:";
-echo strlen("hello"); // function to count word count.
-echo "<br> word Count would be:";
+echo "<br> word Count of 'hello world' would be:";
+
 echo str_word_count("hello world"); // function to count word count.
-echo "<br> word Count would be:";
+
+echo "<br> String Rev of 'hello world' would be: ";
 echo strrev("hello world"); // function to reverse String.
-echo "<br> search word  would be:";
+
+echo "<br> search word Char Position in 'hello world','world' would be :";
 echo strpos("hello world","world"); // String position.
+
 echo "<br> replace word  would be:";
 echo str_replace("World","Hey","hello World"); // String position.
+echo "<br>";
+
 define("rishabh",23,true); // Declaration of Constant , Case Sensetive True.!! 
-echo rishabh;
+echo "value Defined to constant variable rishabh is: ", rishabh;
 
 ?>
 </div>
 
 <div class="header">
-    <h1> Test </h1>
+    <h4> Test </h4>
     <?php 
     $a=20;
     $b=30;
@@ -80,6 +121,7 @@ echo rishabh;
 
     echo strlen("Rishabh");
     echo "<br>";
+    
     if ($a <"20"){
         echo "Value is greater 20";
     }
@@ -226,6 +268,7 @@ foreach($age as $x => $x_value) {
          </div>
 
 </div>
+</div>
 <div class="col-lg-12">
 <h5> Sorting of array </h5>
 <div class="start">
@@ -247,24 +290,26 @@ for($x = 0; $x < $clength; $x++) {
 <h3> Super Global's </h3>
 <p> 
 <?php
-echo ("Several predefined variables in PHP are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.");
+echo ("Several predefined variables in PHP are superglobals, which means that they are always accessible, regardless of scope and you can access them from any function, class or file without having to do anything special.");
 echo "<br>";
 
-echo $_SERVER['PHP_SELF' ];
-echo "<br>";
+
+echo $_SERVER['PHP_SELF'];
+echo "<b> using PHP_SELF </b> <br>";
 echo $_SERVER['SERVER_NAME'];
-echo "<br>";
+echo " <b>using Server_Name </b><br>";
 echo $_SERVER['HTTP_HOST'];
-echo "<br>";
+echo "<b> using HTTP_HOST </b> <br>";
 // echo $_ SERVER['HTTP_REFERER'];
 echo "<br>";
 echo $_SERVER['HTTP_USER_AGENT'];
-echo "<br>";
+echo "<b> -Using HTTP_USER_Agent </b> <br>";
 echo $_SERVER['SCRIPT_NAME'];
-echo "<br>";
+echo " <b> -Using Script_Name </b><br>";
 
 ?>
  </p>
+
 </div>
 </div>
 </section>
@@ -275,4 +320,6 @@ echo "<br>";
 </div>
 
 </body>
+
+
 </html>
