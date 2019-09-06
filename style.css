@@ -4,11 +4,22 @@
     text-transform: uppercase;
     top: 50%;
 }
+.heading {
+    padding: 30px 60px;
+}
+.multiArray {
+    padding: 4px 40px;
+}
 
-/* .header:hover {
-    color: rgb(202, 0, 34);
-} */
 
 .loop_concept {
     padding-left: 5rem;
+}
+
+input[type="text"] {
+    padding: 1px;
+    margin-bottom: 14px;
+}
+.form_area{
+    padding: 42px;
 }

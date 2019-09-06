@@ -1,31 +1,38 @@
+<?php include"header.php" ?>
 
-<?php
-session_start();
-?>
-<?php include "header.php"?>
-
-<body>
-
-    	<!-- Object & Classes -->
-    	<!-- Getter Setter Functions  -->
-    	<!-- Class Variables  -->
-    	<!-- Static Variables -->
-    	<!-- Exception Handling -->
-    	<!-- Access Class Members,(Variables/functions) -->
-    	<!--Private Public access Modifiers-->
-    	<!--Class Functions Declaration, Defination-->
+        <!-- Object & Classes -->
+        
+        <!-- Getter Setter Functions  -->
+        
+        <!-- Class Variables  -->
+        
+        <!-- Static Variables -->
+        
+        <!-- Exception Handling -->
+        
+        <!-- Access Class Members,(Variables/functions) -->
+        
+        <!--Private Public access Modifiers-->
+        
+        <!--Class Functions Declaration, Defination-->
+        
         <!--  -->
-        <!-- OOPS Concept. W.r.t PHP & Implement on Xampp -->
+
+        <!-- OOPS Concept. w.r.t PHP & Implement on Xampp -->
+
         <!--  -->
+
         <!-- SQL -phpmyadmin -->
-    	<!-- Read(sql Select,sql Function,sql Join Subqueries,%like) /implement/delete/update -->
+
+        <!-- Read(sql Select,sql Function,sql Join Subqueries,%like) /implement/delete/update -->
+        
         <!--  -->
-        <!-- Impliment PHp Concept. with DB -->
+
+        <!-- Impliment PHP Concept. with DB -->
+
         <!--  -->
+
         <!-- Model View Controller -->
-
-
-
 
 <div class="form_area">
     <form action="form.php" method="post">
@@ -34,6 +41,7 @@ session_start();
     Contact <input type="number" name ="contact">
     <input type="submit">
     </form>
+
     contact number is: <?php echo $_POST['contact']; ?> <br>
 
     Welcome <?php echo $_POST["name"]; ?><br>
@@ -49,5 +57,4 @@ echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
 
 </body>
 
-
-</html>
+<?php include"footer.php" ?>

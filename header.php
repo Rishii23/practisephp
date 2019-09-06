@@ -13,22 +13,29 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+<body>
+
+
+
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<a class="navbar-brand" href="/index.php">Welcome Page</a>
+<a class="navbar-brand" href="/practisephp/index.php">HOME Page</a>
+
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 <ul class="navbar-nav">
 <li class="nav-item">
-<a class="nav-link" href="<?php ?>/AdvPHP.php">Advance PHP</a>
+<a class="nav-link" href="/practisephp/AdvPHP.php">Advance PHP</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="/form.php">Form</a>
+<a class="nav-link" href="/practisephp/form.php">Form</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="/test.php">test</a>
+<a class="nav-link" href="/practisephp/test.php">test</a>
 </li>    
 </ul>
 </div>  
 </nav>
+<!--  -->

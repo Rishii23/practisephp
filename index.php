@@ -1,33 +1,50 @@
 <?php include "header.php"?>
 <body>
     	<!-- Object & Classes -->
-    	<!-- Getter Setter Functions  -->
-    	<!-- Class Variables  -->
-    	<!-- Static Variables -->
-    	<!-- Exception Handling -->
-    	<!-- Access Class Members,(Variables/functions) -->
-    	<!--Private Public access Modifiers-->
-    	<!--Class Functions Declaration, Defination-->
-        <!--  -->
-        <!-- OOPS Concept. W.r.t PHP & Implement on Xampp -->
-        <!--  -->
-        <!-- SQL -phpmyadmin -->
-    	<!-- Read(sql Select,sql Function,sql Join Subqueries,%like) /implement/delete/update -->
-        <!--  -->
-        <!-- Impliment PHp Concept. with DB -->
+
+        <!-- Getter Setter Functions  -->
+
+        <!-- Class Variables  -->
+
+        <!-- Static Variables -->
+
+        <!-- Exception Handling -->
+
+        <!-- Access Class Members,(Variables/functions) -->
+
+        <!--Private Public access Modifiers-->
+
+        <!--Class Functions Declaration, Defination-->
+
         <!--  -->
 
+        <!-- OOPS Concept. W.r.t PHP & Implement on Xampp -->
+
+        <!--  -->
+
+        <!-- SQL -phpmyadmin -->
+
+        <!-- Read(sql Select,sql Function,sql Join Subqueries,%like) /implement/delete/update -->
         
+        <!--  -->
+
+        <!-- Impliment PHp Concept. with DB -->
+
+        <!--  -->
+
         <!-- Model View Controller -->
 
 
     <div class="heading">
 <h2> Hello world! </h2>
 
+        <h2> Hello world! </h2>
 
+<div class="row">
+    <div class="col-md-12">
 <form action="welcome.php" method="post" <?php echo $_SERVER['PHP_SELF'];?>>
 Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
+E-mail: <input type="email" name="email"><br>
 <input type="submit">
 </form>
 
