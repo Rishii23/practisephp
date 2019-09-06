@@ -19,25 +19,7 @@
     <!--  -->
     <!-- Model View Controller -->
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navba r-brand" href="/index.php">Welcome Page</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/AdvPHP.php">Advance PHP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/form.php">Form</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/test.php">test</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    
     <hr class="generic">
     <div class="multiArray">
 
