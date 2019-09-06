@@ -1,5 +1,5 @@
-<?php include"header.php" ?> 
-
+<?php include "header.php"?>
+<body>
     	<!-- Object & Classes -->
 
         <!-- Getter Setter Functions  -->
@@ -34,9 +34,9 @@
 
         <!-- Model View Controller -->
 
-        <!--  -->
-    
-        <div class="heading">
+
+    <div class="heading">
+<h2> Hello world! </h2>
 
         <h2> Hello world! </h2>
 
@@ -47,7 +47,6 @@ Name: <input type="text" name="name"><br>
 E-mail: <input type="email" name="email"><br>
 <input type="submit">
 </form>
-
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -60,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-</div>
-</div>
+
+
 <?php
 $a =30.5; // variable declaration
 $b=20;
@@ -305,8 +304,7 @@ echo " <b> -Using Script_Name </b><br>";
 
 </div>
 </div>
+</div>
+</div>
 
-</body>
-
-
-</html>
+<?php include "footer.php"?>

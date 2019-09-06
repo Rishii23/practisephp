@@ -1,21 +1,31 @@
 <? function mysqli() ?>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "code@123";
-$dbname = "newdatabase";
 
+<?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+// ***********
+$name= $_POST["name"];
+$pwd= $_POST["password"];
+$email= $_POST["email"];
+
+// ********************
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = mysqli_connect($host, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Create database
-$sql = "CREATE DATABASE myDB";
-if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully";
+$sql = "INSERT INTO newtable (username,password,email) VALUES ('$name' , '$pwd', '$email')";
+
+//function takes 2 parameter connection and sql variable
+
+
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
 } else {
     echo "Error creating database: " . $conn->error;
 }

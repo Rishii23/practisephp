@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +18,7 @@
 
 
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<a class="navbar-brand" href="/practisephp/index.php">HOME Page</a>
+<a class="navbar-brand" href="/practisephp/index.php">Home </a>
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 
@@ -28,6 +28,9 @@
 <ul class="navbar-nav">
 <li class="nav-item">
 <a class="nav-link" href="/practisephp/AdvPHP.php">Advance PHP</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/practisephp/Login.php">Login</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="/practisephp/form.php">Form</a>

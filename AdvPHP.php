@@ -69,6 +69,6 @@ echo "Today is " . date("l");
 </div>
 </body>
 
-<?php include"header.php" ?>
+<?php include"footer.php" ?>
 
 
