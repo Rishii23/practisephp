@@ -6,8 +6,8 @@
 			
 			<div class="col-md-12 mt-5 pt-5">
 				<div class="login-from text-center white-bg">					
-					<h2>Login </h2>
-					<h5>Use your credentials to access your account.</h5>
+					<h2>Signup </h2>
+					<h5>Join Us</h5>
 
 					
 
@@ -15,17 +15,17 @@
 					<form id="sign_up_form" action="database.php" method="post"  class="LoginUpForm" novalidate>
 					
 					  <div class="form-group">
-					    <!--<label for="email">Email address:</label>-->
-					    <input type="email" class="form-control" name="name" id="email" placeholder="Email address:" required>
-					  </div>
-					  <div class="form-group">
-					    <!--<label for="email">Email address:</label>-->
-					    <input type="email" class="form-control" name="email" id="email" placeholder="Email address:" required>
+					   
+					    <input type="email" class="form-control" name="name" id="email" placeholder="Enter New Name:" required>
 					  </div>
 
 					  <div class="form-group">
-					    <!--<label for="pwd">Password:</label>-->
-					    <input type="password" class="form-control" name="password" id="pwd" placeholder="Password:" required>
+					   
+					    <input type="email" class="form-control" name="email" id="email" placeholder="Enter New Email address:" required>
+					  </div>
+
+					  <div class="form-group">			  
+					    <input type="password" class="form-control" name="password" id="pwd" placeholder="Enter New Password:" required>
 					  </div>
 					 
 					<button class="btn-primary"> Sign in </button>

@@ -3,11 +3,12 @@ $host = "localhost";
 $username = "root";
 $password = "";
 $dbname = "mydb";
-
+// ***********
 $name= $_POST["name"];
 $pwd= $_POST["password"];
 $email= $_POST["email"];
 
+// ********************
 // Create connection
 $conn = mysqli_connect($host, $username, $password, $dbname);
 // Check connection
