@@ -12,9 +12,12 @@
 					
 
 				
-					<form id="sign_up_form" method="post" class="LoginUpForm" novalidate>
-
-
+					<form id="sign_up_form" action="database.php" method="post"  class="LoginUpForm" novalidate>
+					
+					  <div class="form-group">
+					    <!--<label for="email">Email address:</label>-->
+					    <input type="email" class="form-control" name="name" id="email" placeholder="Email address:" required>
+					  </div>
 					  <div class="form-group">
 					    <!--<label for="email">Email address:</label>-->
 					    <input type="email" class="form-control" name="email" id="email" placeholder="Email address:" required>
