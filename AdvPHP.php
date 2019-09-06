@@ -20,10 +20,6 @@
     
     <!-- Model View Controller -->
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> 287c4a12d90a1b30ea461a5154f4c6d251001fad
     <hr class="generic">
     <div class="multiArray">
 
@@ -73,6 +69,6 @@ echo "Today is " . date("l");
 </div>
 </body>
 
-<?php include"header.php" ?>
+<?php include"footer.php" ?>
 
 

@@ -23,3 +23,19 @@ input[type="text"] {
 .form_area{
     padding: 42px;
 }
+.login-from {
+    box-shadow: 0px 5px 45px 11px #ccc;
+    padding:52px 100px 52px 100px;
+    background-color: aliceblue;
+}
+.footer{
+    margin-top: 14rem;
+background-color: rgb(53, 151, 236);
+text-align: center;
+color: white;
+padding: 10px;
+font-weight: 700;
+}
+.bg-dark {
+    background-color: #3597ec!important;
+}

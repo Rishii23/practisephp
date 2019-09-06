@@ -304,8 +304,7 @@ echo " <b> -Using Script_Name </b><br>";
 
 </div>
 </div>
+</div>
+</div>
 
-</body>
-
-
-</html>
+<?php include "footer.php"?>
