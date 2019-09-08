@@ -1,4 +1,5 @@
 <?php include "header.php"?>
+    
 <body>
     	<!-- Object & Classes -->
 
@@ -34,11 +35,9 @@
 
         <!-- Model View Controller -->
 
-
     <div class="heading">
-<h2> Hello world! </h2>
 
-        <h2> Hello world! </h2>
+    <h2> Hello world! </h2>
 
 <div class="row">
     <div class="col-md-12">
