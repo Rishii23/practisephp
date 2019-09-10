@@ -48,7 +48,53 @@ font-weight: 700;
     background-color: #3597ec!important;
 }
 .bg-green{
-    background-color: #8fe68c;
+    background-color: #a28ccd;
     border-radius: 10px;
     padding-top: 31px;
+}
+.box{
+    border:1px solid #ccc;
+    padding: 12px;
+    margin-top: 20px;
+}
+.UserArea{
+    border: 1px solid rgb(61, 60, 60);
+    background: #e4e2e28c;
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.UserArea .UserImage .fa{
+    border-radius: 50%;
+    color:black;
+    text-align: center;
+}
+.UserArea .UserName{
+    border-left: 1px soild black;
+    word-wrap: break-word;
+}
+.UserArea .UserName p{
+font-style: italic;
+font-style: 18px;
+}
+.ChatPreviewRecieved{
+    background-color: #ccc;
+    padding: 12px;
+    margin:12px 0px;
+    border-radius: 12px;
+    font-style: italic;
+     
+}
+.Chat-box input[type="text"] {
+    padding: 1px;
+    margin-bottom: 14px;
+    width: 100%;
+    height: 100px;
+}
+.ChatPreviewSent{
+    background-color: rgba(187, 161, 161, 0.842);
+padding: 12px;
+margin:12px 0px;
+border-radius: 12px;
+
 }
