@@ -6,19 +6,26 @@ $username = "root";
 $password = "";
 $dbname = "mydb";
 // ***********
-$name= $_POST["name"];
-$pwd= $_POST["password"];
-$email= $_POST["email"];
+$UsrName= $_POST["username"];
+$pwd= $_POST["Createpassword"];
+$email= $_POST["emailaddr"];
 
+$UsrName= $_POST["username"];
 // ********************
+
 // Create connection
 $conn = mysqli_connect($host, $username, $password, $dbname);
 // Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+// **** Signup
 
-$sql = "INSERT INTO newtable (username,password,email) VALUES ('$name' , '$pwd', '$email')";
+$sql = "INSERT INTO newtable (username,password,email) VALUES ('$UsrName' , '$pwd', '$email')";
+
+// $sql = "SELECT username FROM newtable;
+// if(username ==$_POST[])
 
 //function takes 2 parameter connection and sql variable
 

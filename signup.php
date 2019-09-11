@@ -13,19 +13,17 @@
 
 				
 					<form id="sign_up_form" action="database.php" method="post"  class="LoginUpForm" novalidate>
-					
+					<!-- username -->
 					  <div class="form-group">
-					   
-					    <input type="email" class="form-control" name="name" id="email" placeholder="Enter Full Name:" required>
+						<input type="email" class="form-control" name="username" id="user" placeholder="Enter User Name:" required>
 					  </div>
 
 					  <div class="form-group">
-					   
-					    <input type="email" class="form-control" name="email" id="email" placeholder="Enter New Email address:" required>
+							<input type="email" class="form-control" name="emailaddr" id="email" placeholder="Enter New Email address:" required>
 					  </div>
 
 					  <div class="form-group">			  
-					    <input type="password" class="form-control" name="password" id="pwd" placeholder="Enter New Password:" required>
+					    <input type="password" class="form-control" name="Createpassword" id="pwd" placeholder="Enter New Password:" required>
 					  </div>
 					 
 					<button class="btn btn-dark"> SIGN UP </button>
