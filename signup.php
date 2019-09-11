@@ -15,7 +15,7 @@
 					<form id="sign_up_form" action="database.php" method="post"  class="LoginUpForm" novalidate>
 					<!-- username -->
 					  <div class="form-group">
-						<input type="email" class="form-control" name="username" id="user" placeholder="Enter User Name:" required>
+						<input type="text" class="form-control" name="username" id="user" placeholder="Enter User Name:" required>
 					  </div>
 
 					  <div class="form-group">

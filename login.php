@@ -15,17 +15,14 @@
 					<form id="sign_up_form" action="database.php" method="post"  class="LoginUpForm" novalidate>
 					
 					  <div class="form-group">
-					  
-					    <input type="email" class="form-control" name="name" id="email" placeholder="User Name:" required>
+						<input type="email" class="form-control" name="LoginName" id="email" placeholder="User Name:" required>
 					  </div>
 					<div class="form-group">
 					    <!--<label for="pwd">Password:</label>-->
-					    <input type="password" class="form-control" name="password" id="pwd" placeholder="Password:" required>
+						    <input type="password" class="form-control" name="LoginPassword" id="pwd" placeholder="Password:" required>
 					  </div>
 					 
-					<button class="btn btn-primary"> SIGN IN 
-
-					</button>
+					<button class="btn btn-primary"> SIGN IN </button>
 				
 					 
 					</form>

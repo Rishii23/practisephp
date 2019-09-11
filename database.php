@@ -10,7 +10,9 @@ $UsrName= $_POST["username"];
 $pwd= $_POST["Createpassword"];
 $email= $_POST["emailaddr"];
 
-$UsrName= $_POST["username"];
+$LoginName= $_POST["LoginName"];
+$LoginPwd= $_POST["LoginPassword"];
+
 // ********************
 
 // Create connection
@@ -24,18 +26,47 @@ if ($conn->connect_error) {
 
 $sql = "INSERT INTO newtable (username,password,email) VALUES ('$UsrName' , '$pwd', '$email')";
 
-// $sql = "SELECT username FROM newtable;
-// if(username ==$_POST[])
+// sign-in
 
-//function takes 2 parameter connection and sql variable
+$sql = "SELECT username FROM newtable";
 
+$result = mysqli_query($conn, $sql);
 
+// echo $LoginName. "<br>";
+// echo $LoginPwd. "<br>";
 
-if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+// if ($LoginName = $row["username"])
+// {
+//     echo "Login Accepted <br>";
+// }
+// else {
+//     echo "Login Declined <br>";
+//     }
+echo mysqli_num_rows($result);
+
+print_r( mysqli_fetch_assoc($result));
+
+die();
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "Name: ". $row["username"]."<br>";
+    }
 } else {
-    echo "Error creating database: " . $conn->error;
+    echo "0 results";
 }
+
+
+
+// -- function takes 2 parameter connection and sql variable
+
+
+
+// if (mysqli_query($conn, $sql)) {
+//     echo "New record created successfully";
+// } else {
+//     echo "Error creating database: " . $conn->error;
+// }
 
 $conn->close();
 ?>
