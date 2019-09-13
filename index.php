@@ -39,9 +39,10 @@
 
     <h2> Hello world! </h2>
 
-<div class="row">
-    <div class="col-md-12">
-<form action="welcome.php" method="post" <?php echo $_SERVER['PHP_SELF'];?>>
+    <div class="row">
+         <div class="col-md-12">
+
+<form action="database.php" method="post" <?php echo $_SERVER['PHP_SELF'];?> >
 Name: <input type="text" name="name"><br>
 E-mail: <input type="email" name="email"><br>
 <input type="submit">

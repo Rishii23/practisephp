@@ -98,3 +98,9 @@ margin:12px 0px;
 border-radius: 12px;
 
 }
+.ButtonSend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

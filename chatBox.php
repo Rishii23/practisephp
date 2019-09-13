@@ -22,7 +22,7 @@
 </div>
 </div>
 
-            <div class="col-lg-12">
+            <div class="col-md-10">
                 <div class="ChatReply">
                     <div class="content">
                         <p> Chat here:   </p>
@@ -30,6 +30,12 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-2">
+                <div class="ButtonSend">
+                  <button class="btn btn-primary"> <span> <i class="fa fa-plane"> SENT </i> </span>
+                </div>
+            </div>
+
         </div>
         </div>
 </div>
