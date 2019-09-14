@@ -15,27 +15,20 @@ if ($conn->connect_error) {
 // ***********
 // For Sign up Variables
 $Chat = $_POST["ChatReply"];
-$ChatReply = NULL;
+$ChatReply = 'Rishabh';
 // ********************
 
-// $sql = "INSERT INTO newtable (message) VALUES ('$Chat')";
-$sql = "SELECT message FROM newtable where message= $Chat ";
-$result = mysqli_query($conn, $sql);
+$sql = "INSERT INTO newtable (message) VALUE ('$Chat')";
 
- if (mysqli_num_rows($result) > 0) {
+$result = mysqli_query($conn,$sql);
 
-    echo $Chat;
-
-    die();
-   $row = mysqli_fetch_assoc($result);
-   
-    echo $row["message"];
-   
-
-   }
-   else {
-       echo "NOT WORKING";
-   }
+if ($result) {
+    echo "Sucessfully";  
+}
+else {
+    $sql = "SELECT message FROM newtable where message= $Chat";
+    $ChatReply = $Chat;
+}
  
 
 

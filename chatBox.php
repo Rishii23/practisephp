@@ -4,7 +4,10 @@
 <section class="Chat-box">
     <div class="container">
         <div class="box">
-            <div class="row">
+            <div class="pull-right">
+        <button class="btn btn-primary" onclick="refreshPage()"> Refresh </button>
+</div>   
+        <div class="row">
 
                 <div class="col-md-10">
                     <div class="ChatPreviewRecieved">
@@ -28,7 +31,7 @@
                     </div>
                 </div>
 
-<form action="chatboxDB.php" method="post" class="ChatBoxForm" >
+<form action="sendmsgDB.php" method="post" class="ChatBoxForm" >
                 <div class="col-lg-12">
                     <div class="ChatReply">
                         <div class="content">
@@ -50,5 +53,9 @@
 
 
 </body>
-
+<script>
+function refreshPage(){
+    window.location.reload();
+} 
+</script>
 <?php include "footer.php" ?>
