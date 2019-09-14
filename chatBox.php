@@ -8,7 +8,13 @@
 
                 <div class="col-md-10">
                     <div class="ChatPreviewRecieved">
-                        <p> <?php echo $ChatReply; ?>
+                        <p> 
+                            <?php 
+                        
+                        echo "$ChatReply"; 
+                        
+                        
+                        ?>
                             <br> TEXT RECEIVED </p>
                     </div>
                 </div>
@@ -21,6 +27,7 @@
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum error inventore beatae voluptas placeat quibusdam explicabo <br> TEXT SENT</p>
                     </div>
                 </div>
+
 <form action="chatboxDB.php" method="post" class="ChatBoxForm" >
                 <div class="col-lg-12">
                     <div class="ChatReply">
@@ -32,10 +39,11 @@
                              </div>
                         </div>
                     </div>
-                </div>
-               
+                </div>              
 </form>
-            </div>
+</div>
+         
+
         </div>
     </div>
 </section>

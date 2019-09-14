@@ -6,7 +6,9 @@ $username = "root";
 $password = "";
 $dbname = "mydb";
 // Create connection
+
 $conn = mysqli_connect($host, $username, $password, $dbname);
+
 // Check connection
 
 if ($conn->connect_error) {
@@ -20,6 +22,7 @@ $pwd= $_POST["Createpassword"];
 $email= $_POST["emailaddr"];
 // ********************
 
+// $sql = "UPDATE newtable SET username ='Doe' WHERE id= 4 ";
 
 $sql = "INSERT INTO newtable (username,password,email) VALUES ('$UsrName','$pwd', '$email')";
 $result = mysqli_query($conn, $sql);
