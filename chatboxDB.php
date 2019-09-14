@@ -16,13 +16,14 @@ if ($conn->connect_error) {
 // For Sign up Variables
 
 $Chat = $_POST["ChatReply"];
-$ChatReply=null;
+$ChatReply = NULL;
 // ********************
 
 
-$sql = "INSERT INTO newtable (message) VALUES ('$Chat')";
+$sql = "INSERT INTO newtable (message) VALUE ('$Chat')";
 
-$sql = "SELECT FROM newtable WHERE message=$ChatReply" ;
+$sql = "SELECT message FROM newtable";
+
 
 $result = mysqli_query($conn, $sql);
 
