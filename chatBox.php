@@ -1,5 +1,48 @@
 <?php include "header.php" ?>
 
+<? function mysqli() ?>
+<?php
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+
+// Create connection
+$conn = mysqli_connect($host, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+// ***********
+// For Sign up Variables
+$Chat = $_POST["ChatReply"];
+
+// ********************
+
+$sql_insert = "INSERT INTO newtable message VALUE $Chat";
+$sql_Select = "SELECT message FROM newtable";
+
+
+$result_sql_insert = mysqli_query($conn, $sql_insert);
+$result_sql_select = mysqli_query($conn, $sql_Select);
+
+
+if($result_sql_insert) {
+    echo "Sucessful";
+   $row = mysqli_fetch_assoc($result_sql_select);
+       foreach ($row as $value)
+       echo "$value";
+    }  
+
+
+// }
+// while($result_sql_select){
+//     echo $sql_Select;
+// }
+
+$conn->close();
+?>
+
 <!--  -->
 <section class="Chat-box">
     <div class="container">
@@ -11,14 +54,9 @@
 
                 <div class="col-md-10">
                     <div class="ChatPreviewRecieved">
-                        <p> 
-                            <?php 
-                        
-                        echo "$ChatReply"; 
-                        
-                        
-                        ?>
-                            <br> TEXT RECEIVED </p>
+
+                        <p>  <?php echo $Chat; ?>
+                          <br> TEXT RECEIVED </p>
                     </div>
                 </div>
 
@@ -31,7 +69,7 @@
                     </div>
                 </div>
 
-<form action="sendmsgDB.php" method="post" class="ChatBoxForm" >
+<form action="" method="post" class="ChatBoxForm" >
                 <div class="col-lg-12">
                     <div class="ChatReply">
                         <div class="content">

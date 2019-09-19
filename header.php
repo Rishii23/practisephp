@@ -40,9 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/practisephp/test.php">test</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="/practisephp/chatBox.php">Chat Box</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>
