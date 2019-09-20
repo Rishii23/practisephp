@@ -41,8 +41,14 @@
                         <a class="nav-link" href="/practisephp/test.php">test</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/practisephp/chatBox.php">Chat Box</a>
+                        <a class="nav-link" href="/practisephp/begin_test.php">Start Test</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/practisephp/admin.php">admin</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/practisephp/chatBox.php">Chat Box</a>
+                    </li> -->
                 </ul>
             </div>
         </nav>

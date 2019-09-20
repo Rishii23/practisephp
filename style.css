@@ -119,3 +119,24 @@ border-radius: 12px;
     justify-content: center;
     height: 100%;
 }
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 3px 22px;
+    border-bottom-color: transparent;
+  }
+
+  .settings a {
+    padding: 0px 13px;
+    background-color: white;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+    width: 50%;
+    margin: auto;
+  }
+  .paper_name h3{
+      text-align: right;
+  }

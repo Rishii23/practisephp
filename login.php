@@ -12,7 +12,7 @@
 					
 
 				
-					<form id="sign_up_form" action="loginDB.php" method="post"  class="LoginUpForm" novalidate>
+					<form id="sign_up_form" action="chatBox.php" method="post"  class="LoginUpForm" novalidate>
 					
 					<div class="form-group">
 					<input type="email" class="form-control" name="LoginName" id="email" placeholder ="User Name:" required>
