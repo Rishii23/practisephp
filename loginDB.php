@@ -10,15 +10,18 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
 // Check connection
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die ("Connection failed: " . $conn->connect_error);
 }
+
 // ***********
 // For Sign up Variables
 
 
 // For Sign in Variables
+
 $LoginName = $_POST["LoginName"];
-$LoginPwd= $_POST["LoginPassword"];
+$LoginPwd = $_POST["LoginPassword"];
+
 // ********************
 
    $sql ="SELECT username FROM newtable WHERE username='$LoginName' AND password='$LoginPwd'";
