@@ -19,21 +19,17 @@
 <h5><span> Ans:</span> <?php echo ' $ans' ?>  Enter answer </h5>
 </div>
 <div class="row">
-    <div class="col-md-4 mt-3 pull-left">
+    <div class="col-md-6     mt-3 pull-left">
 <div class="Previous ">
 <button class="btn btn-primary"> Previous  </button>
 </div>
     </div>
-    <div class="col-md-4 mt-3  text-center">
-<div class="Submit ">
+    <div class="col-md-6     mt-3 ">
+<div class="Submit  pull-right">
 <button class="btn btn-primary "> Submit  </button>
 </div>
     </div>
-    <div class="col-md-4 mt-3  ">
-<div class="Next pull-right">
-<button class="btn btn-primary "> Next  </button>
-</div>
-    </div>
+  
 </div>
     </form>
 </div>
