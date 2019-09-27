@@ -1,3 +1,20 @@
+<?php include 'connect_db.php' ?>
+<?php 
+$id= $_GET['id'];
+
+if($id =='')
+{
+$id=163;
+};
+
+$sql_fetch = "SELECT id,question, option_a , option_b , option_c , option_d  FROM newtable where id=$id limit 1";
+
+$result = mysqli_query($conn,$sql_fetch);
+$row = mysqli_fetch_assoc($result);
+
+mysqli_close($conn);
+?>
+
 <?php include 'header.php'?>
 <body>
 <div class="container">
@@ -11,22 +28,31 @@
   
 </div>
 <div class="box question">
-<h3><span> Q: </span> <?php echo '$Ques' ?> Enter Question </h3>
+<h3><span> Q: </span> <?php echo $row['question'] ?> </h3>
 </div>
 
-
-<div class="box answer">
-<h5><span> Ans:</span> <?php echo ' $ans' ?>  Enter answer </h5>
+<div class="box option">
+<h6><span><?php echo $row['option_a'] ?> </span>  </h6>
 </div>
+<div class="box option">    
+<h6><span><?php echo $row['option_b'] ?> </span>  </h6>
+</div>
+<div class="box option">
+<h6><span><?php echo $row['option_c'] ?> </span>  </h6>
+</div>
+<div class="box option">
+<h6><span><?php echo $row['option_d'] ?> </span>  </h6>
+</div>
+
 <div class="row">
-    <div class="col-md-6     mt-3 pull-left">
+    <div class="col-md-6 mt-3 pull-left">
 <div class="Previous ">
-<button class="btn btn-primary"> Previous  </button>
+<a class="btn btn-primary"href="http://localhost/practisephp/begin_test.php?id=<?php echo $row['id']-1; ?>"  > previous  </a>
 </div>
     </div>
     <div class="col-md-6     mt-3 ">
 <div class="Submit  pull-right">
-<button class="btn btn-primary "> Submit  </button>
+<a class="btn btn-primary " href="http://localhost/practisephp/begin_test.php?id=<?php echo ($row['id']+1); ?>"  > next  </a>
 </div>
     </div>
   
@@ -34,4 +60,5 @@
     </form>
 </div>
 </body>
+
 <?php include 'footer.php' ?>

@@ -1,3 +1,25 @@
+<?php include "connect_db.php" ?>
+
+<?php
+// For Sign in Variables
+$LoginName= $_POST["LoginName"];
+$LoginPwd=  $_POST["LoginPassword"];
+
+$sql ="SELECT username FROM newtable WHERE username= '$LoginName' AND password='$LoginPwd' ";
+ $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        echo "login accepted";
+     } 
+     else {
+            echo "login Rejected";
+        }
+    
+ 
+$conn->close();
+?>
+
+
+<!-- *START* -->
 <?php include "header.php" ?>   
      
 <section class="login-block" >
@@ -12,7 +34,7 @@
 					
 
 				
-					<form id="sign_up_form" action="chatBox.php" method="post"  class="LoginUpForm" novalidate>
+					<form id="sign_up_form" action="begin_test.php" method="post"  class="LoginUpForm" novalidate>
 					
 					<div class="form-group">
 					<input type="email" class="form-control" name="LoginName" id="email" placeholder ="User Name:" required>

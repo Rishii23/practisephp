@@ -1,5 +1,29 @@
-<?php include "header.php" ?>   
-     
+<?php include "connect_db.php" ?>
+<?php
+// ***********
+// For Sign up Variables
+
+$UsrName = $_POST["username"];
+$pwd= $_POST["Createpassword"];
+$email= $_POST["emailaddr"];
+// ********************
+
+$sql = "INSERT INTO newtable (username,password,email) VALUES ('$UsrName','$pwd', '$email')";
+$result = mysqli_query($conn, $sql);
+
+ // page after submition
+if ($result) {
+    echo "New record created successfully";
+}
+else {
+    echo "Error creating database: " . $conn->error;
+}
+$conn->close();
+
+?>   
+
+<?php include "header.php" ?> 
+
 <section class="login-block" >
 	<div class="container">
 		<div class="row">
@@ -8,11 +32,8 @@
 				<div class="signup-from text-center bg-green">					
 					<h2>Signup </h2>
 					<h5>Join Us</h5>
-
-					
-
-				
-					<form id="sign_up_form" action="SignupDB.php" method="post"  class="LoginUpForm" novalidate>
+								
+					<form id="sign_up_form" action="#" method="post"  class="LoginUpForm" novalidate>
 					<!-- username -->
 					  <div class="form-group">
 						<input type="text" class="form-control" name="username" id="user" placeholder="Enter  Name:" required>

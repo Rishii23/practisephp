@@ -1,4 +1,43 @@
+<?php include 'connect_db.php' ?>
+
+<?php 
+
+$ques = $_POST["ques"];
+$answer = $_POST["correct_ans"];
+$option_a = $_POST["option_a"];
+$option_b = $_POST["option_b"];
+$option_c = $_POST["option_c"];
+$option_d = $_POST["option_d"];
+$button_submit = $_POST["submit_btn_ques"];
+
+// if (issset($submit_ques)){
+if (isset($button_submit)){
+
+$sql_insert = "INSERT INTO newtable (question,correct_ans,option_a,option_b,option_c,option_d) VALUE ('$ques','$answer','$option_a','$option_b','$option_c','$option_d')";
+
+$result = mysqli_query($conn, $sql_insert);
+if($result){
+    echo "Sucessful";
+  }
+  else {
+    echo "Error creating database: " . $conn->error;
+  };
+
+  
+};
+
+// }
+
+// else {
+//   die ();
+// }
+
+  $conn->close();
+
+?>
+
 <?php include 'header.php'?>
+
 <body>
 
 <div class="container">
@@ -11,7 +50,7 @@
 
   <ul class="nav nav-tabs settings">
     <li class="active">
-      <a data-toggle="tab" href="#home">Settings </a>
+      <a data-toggle="tab" href="#home">Add Question </a>
     </li>
     <li><a data-toggle="tab" href="#menu1">Change Password</a></li>
   </ul>
@@ -21,34 +60,59 @@
       <h3>Add Question</h3>
      <div class="container">
 
-     <form action="add_ques.php" method="POST">
+     <form action="" method="POST">
+
     <div class="form-group">
       <label for="Ques">Add Question:</label>
       <input type="text" class="form-control" name="ques">
     </div>
     <div class="form-group">
-      <label for="text"> Enter Answer</label>
-      <input type="text" class="form-control" name="answer">
+      <label for="Ques">Correct Answer </label>
+      <input type="text" class="form-control" name="correct_ans">
     </div>
     <div class="form-group">
-      <button class="btn btn-primary"> Add Question </button>
+      <label for="Ques">Option A:</label>
+      <input type="text" class="form-control" name="option_a">
+    </div>
+    <div class="form-group">
+      <label for="Ques">Option B:</label>
+      <input type="text" class="form-control" name="option_b">
+    </div>
+    <div class="form-group">
+      <label for="Ques">Option C:</label>
+      <input type="text" class="form-control" name="option_c">
+    </div>
+    <div class="form-group">
+      <label for="Ques">Option D:</label>
+      <input type="text" class="form-control" name="option_d">
+    </div>
+    
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" name="submit_btn_ques"> Add Question </button>
     </div>
   </form>
 
 </div>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h3 >Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <form action="" method="POST">
+
+<div class="form-group">
+  <label for="oldpwd">OLD Password:</label>
+  <input type="text" class="form-control" name="old_pwd">
+</div>
+<div class="form-group">
+  <label for="newpwd">New Password:</label>
+  <input type="text" class="form-control" name="new_pwd">
+</div>
+<button type="submit" class="btn- btn-active"> Change Password </button>
+    </form>
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3>Menu 2</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
     </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
+    
   </div>
 </div>
 
