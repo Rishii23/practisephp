@@ -13,7 +13,7 @@ $button_submit = $_POST["submit_btn_ques"];
 // if (issset($submit_ques)){
 if (isset($button_submit)){
 
-$sql_insert = "INSERT INTO newtable (question,correct_ans,option_a,option_b,option_c,option_d) VALUE ('$ques','$answer','$option_a','$option_b','$option_c','$option_d')";
+$sql_insert = "INSERT INTO question_bank (question,correct_answer,option_a,option_b,option_c,option_d) VALUE ('$ques','$answer','$option_a','$option_b','$option_c','$option_d')";
 
 $result = mysqli_query($conn, $sql_insert);
 if($result){
