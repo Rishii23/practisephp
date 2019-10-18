@@ -1,21 +1,32 @@
 <?php include 'connect_db.php' ?>
 
 <?php
-$id = $_GET['id'];
-if ($id == '') {
-    $id = 163;
-};
-$sql_fetch = "SELECT id,question, option_a , option_b , option_c , option_d  FROM question_bank where id=$id limit 1";
-$result = mysqli_query($conn, $sql_fetch);
+// $id = $_GET['id'];
+// if ($id == '') {
+//     $id = 163;
+// };
+$UserName= $_POST['fname'];
+$Category= $_POST['subject_select'];
+
+$sql_enter = "INSERT INTO newtable (name,category) VALUES ('$UserName','$Category')";
+$result = mysqli_query($conn, $sql_enter);+
+
 $row = mysqli_fetch_assoc($result);
-mysqli_close($conn);
+
+ // page after submition
+ if ($result) {
+    echo "New record created successfully";
+}
+else {
+    echo "Error creating database: " . $conn->error;
+}
+$conn->close();
+
+?>   
+
 ?>
 
-
-
 <?php include 'header.php' ?>
-
-
 
 <?php
 // Start the session
@@ -24,105 +35,41 @@ session_start();
 
 <?php
 // Set session variables
-$_SESSION["favcolor"] = "green";
-$_SESSION["favanimal"] = "cat";
-echo "Session variables are set.";
+// $_SESSION["favcolor"] = "green";
+// $_SESSION["favanimal"] = "cat";
+// echo "Session variables are set.";
+// 
 ?>
-
-<?php
-
-while ($counter >= 1) {
-    $counter--;
-    echo ($counter . "value decreased");
-}
-
-?>
-
 
 <body>
     <div class="container">
-        <form>
-            <div class="box">
-                <div class="container">
-                    <div class="paper_name">
-                        <h2> Science Exam </h2>
-                        <h3 id="counter">
-                            <?php
-                            $hh = 24;
-                            $mm = 10;
-                            $ss = 12;
-                            while ($hh > 24) {
-                                $hh--;
-                                if ($mm > 60) {
-                                    $mm--;
-                                    if ($ss > 60) {
-                                        $ss--;
-                                    };
-                                };
-                                echo $hh, $mm, $ss;
-                            };
-
-                            ?>
-                        </h3>
-
+        <div class="col-md-12">
+            <div class="start_form">
+                <form action="start_test.php" class="was-validated" method="post">
+                    <div class="form-group">
+                        <label for="uname">User Name:</label>
+                        <input type="text" class="form-control" name="fname" placeholder="Enter Full name" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
-                </div>
-
-
-                <div class="box question">
-                    <h3><span> Q: </span> <?php echo $row['question'] ?> </h3>
-                </div>
-
-
-                <form action="/action_page.php">
-                    <div class="box option">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_a'] ?> </span>
-                            </label>
-                        </div>
+                    <div class="form-group">
+                        <label for="uname">Select Subject Category:</label>
+                        <select name="subject_select">
+                            <option value="English">English </option>
+                            <option value="Science">Science </option>
+                            <option value="Geography">Geography </option>
+                            <option value="Foriegn Language">Foriegn Language </option>
+                        </select>
                     </div>
-                    <div class="box option">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_b'] ?> </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="box option">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_c'] ?> </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="box option">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_d'] ?> </span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="correct_answer">
-                        <p> Correct answer </p>
-                    </div>
-                    <div class="wrong_answer">
-                        <p> Wrong answer </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mt-3 pull-left">
-                            <div class="Previous ">
-                                <a class="btn btn-primary" href="http://localhost/practisephp/begin_test.php?id=<?php echo $row['id'] - 1; ?>"> previous </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-3 ">
-                            <div class="Submit  pull-right">
-                                <a class="btn btn-primary " href="http://localhost/practisephp/begin_test.php?id=<?php echo ($row['id'] + 1); ?>"> next </a>
-                            </div>
-                        </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary" type="submit"> Submit </button>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
 </body>
+
+
 
 <?php include 'footer.php' ?>

@@ -10,6 +10,7 @@ $option_c = $_POST["option_c"];
 $option_d = $_POST["option_d"];
 $button_submit = $_POST["submit_btn_ques"];
 
+
 // if (issset($submit_ques)){
 if (isset($button_submit)){
 
@@ -26,11 +27,6 @@ if($result){
   
 };
 
-// }
-
-// else {
-//   die ();
-// }
 
   $conn->close();
 
