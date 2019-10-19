@@ -1,51 +1,31 @@
-<?php include 'connect_db.php' ?>
+<?php 
 
-<?php
-// $id = $_GET['id'];
-// if ($id == '') {
-//     $id = 163;
-// };
+session_start();
+
+include 'connect_db.php' ;
+// Start the session
+include 'header.php';
+
 $UserName= $_POST['fname'];
 $Category= $_POST['subject_select'];
 
-$sql_enter = "INSERT INTO newtable (name,category) VALUES ('$UserName','$Category')";
-$result = mysqli_query($conn, $sql_enter);+
-
-$row = mysqli_fetch_assoc($result);
-
- // page after submition
- if ($result) {
-    echo "New record created successfully";
-}
-else {
-    echo "Error creating database: " . $conn->error;
-}
-$conn->close();
-
-?>   
-
-?>
-
-<?php include 'header.php' ?>
-
-<?php
-// Start the session
-session_start();
-?>
-
-<?php
 // Set session variables
-// $_SESSION["favcolor"] = "green";
-// $_SESSION["favanimal"] = "cat";
+$_SESSION["user"] = $UserName;
+$_SESSION["subject"] = $Category;
+
 // echo "Session variables are set.";
-// 
+
+if ($_SESSION["user"] != NULL && $_SESSION["subject"] != NULL ){
+
+  header("Location:   /practisephp/start_test.php"); 
+}
 ?>
 
 <body>
     <div class="container">
         <div class="col-md-12">
             <div class="start_form">
-                <form action="start_test.php" class="was-validated" method="post">
+                <form action="" class="was-validated" method="POST">
                     <div class="form-group">
                         <label for="uname">User Name:</label>
                         <input type="text" class="form-control" name="fname" placeholder="Enter Full name" required>

@@ -1,41 +1,43 @@
-<?php include 'connect_db.php' ?>
-
 <?php
-$id = $_GET['id'];
-if ($id == '') {
-    $id = 1;
-};
-$sql_fetch = "SELECT id,question, option_a , option_b , option_c , option_d  FROM question_bank where id= $id limit 1";
-$result = mysqli_query($conn, $sql_fetch);
-$row = mysqli_fetch_assoc($result);
-mysqli_close($conn);
-?>
-<?php include 'header.php' ?>
-
-<?php
-// Start the session
 session_start();
+include 'connect_db.php';
+include 'header.php';
+
+$id = $_GET['id'];
+$subject = $_GET['subject_name'];
+// $sub_name = $_GET['subject_name'];
+
+if ($id == '') {
+    $id = 3;
+};
+
+$Category = $_SESSION["subject"];
+
+$sql_fetch = "SELECT * FROM question_bank WHERE id = $id LIMIT 1";
+
+
+$result = mysqli_query($conn, $sql_fetch);
+
+$row = mysqli_fetch_assoc($result);
+
+mysqli_close($conn);
+
 ?>
-
-<?php
-// Set session variables
-// $_SESSION["favcolor"] = "green";
-// $_SESSION["favanimal"] = "cat";
-// echo "Session variables are set.";
-// 
-?>
-
-<?php
-
-while ($counter >= 1) {
-    $counter--;
-    echo ($counter . "value decreased");
-}
-
-?>
-
 
 <body>
+    <?php
+    echo $subject . '<br>';
+
+    echo $id . '<br>';
+
+    if ($sub_name == $Category) {
+        echo 'true';
+    } else {
+        echo "false";
+    }
+    // echo '<br> '. $result['id'];
+    ?>
+
     <div class="container">
         <form>
             <div class="row">
@@ -43,19 +45,15 @@ while ($counter >= 1) {
                     <div class="box">
                         <div class="container">
                             <div class="paper_name">
-                                <h2> Science Exam </h2>
-
-
+                                <h2> <?php echo $_SESSION["subject"]; ?> Exam </h2>
                             </div>
                         </div>
-
 
                         <div class="box question">
                             <h3><span> Q: </span> <?php echo $row['question'] ?> </h3>
                         </div>
 
-
-                        <form action="#">
+                        <form action="">
                             <div class="box option">
                                 <div class="form-check">
                                     <label class="form-check-label">
@@ -100,13 +98,13 @@ while ($counter >= 1) {
                             </div>
                             <div class="row">
                                 <div class="col-md-6 mt-3 pull-left">
-                                    <div class="Previous ">
+                                    <div class="Previous">
                                         <a class="btn btn-primary" href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id'] - 1; ?>"> previous </a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mt-3 ">
                                     <div class="Submit  pull-right">
-                                        <a class="btn btn-primary " href="http://localhost/practisephp/start_test.php?id=<?php echo ($row['id'] + 1); ?>"> next </a>
+                                        <a class="btn btn-primary " href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id'] + 1; ?>">Save & Next </a>
                                     </div>
                                 </div>
                             </div>
@@ -124,37 +122,26 @@ while ($counter >= 1) {
                             <?php
                             $a = 1;
                             while ($a <= 20) {
-                                echo '<h3 class=" green_bck">' . $a . '</h3>';
+                                echo '<a> <h3 class="green_bck">' . $a . '</h3> </a>';
                                 $a++;
                             }
                             ?>
-    
+
                         </div>
+                    </div>
+                    <div class="float-right">
+
+                        <p>User Name: <?php echo $_SESSION["user"]; ?> </p>
                     </div>
                 </div>
             </div>
+    </div>
+
 </body>
-<script>
-    $.noConflict();
-    // $(document).ready(function() {
-    //     var min = 12;
-    //     var sec = 30;
 
-    //     // while (min > 0) {
-    //     //     min--;
-    //     //     while (sec > 0) {
-    //     //         sec--;
-    //     //     }
-    //     // }
-    //     document.getElementById("counter").innerHTML = min + sec;
-    // )
-
-
-    // });
-</script>
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Oct 18, 2019 14:37:25").getTime();
+    var countDownDate = new Date("Oct 19, 2019 14:37:25").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
