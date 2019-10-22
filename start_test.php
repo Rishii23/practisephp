@@ -10,33 +10,39 @@ $subject = $_GET['subject_name'];
 if ($id == '') {
     $id = 1;
 };
+
 $Category = $_SESSION["subject"];
-$score = $_SESSION["score"];
+$_SESSION["score"] = $score;
+
 $sql_fetch = "SELECT * FROM question_bank WHERE id = '$id' AND subject_name = '$Category' LIMIT 1";
 
 // echo $sql_fetch;
 $result = mysqli_query($conn, $sql_fetch);
 $row = mysqli_fetch_assoc($result);
+
 // mysqli_close($conn);
 
 ?>
+ <?php
+$my_answer = $_POST['opt'];
+$correct_answer =  $row['correct_answer'];
 
+
+if ($my_answer ==  $correct_answer) {
+echo 'Correct Answer';
+$score++;
+echo 'your Score is' ;
+} 
+
+else {
+echo 'Wrong Answer <br>';
+// echo 'Correct Answer is:' . $correct_answer;
+$score--;
+}
+        ?>
 <body>
-    <?php
-    echo $subject . '<br>';
-    echo $id . '<br>';
-
-    if ($sub_name == $Category) {
-        echo 'true';
-    } else {
-        echo "false";
-    }
-    // if($ques_no <=5){
-
-    ?>
 
     <div class="container">
-
         <div class="row">
             <div class="col-md-8">
                 <form name="answers_option" action="" method="POST">
@@ -122,30 +128,13 @@ $row = mysqli_fetch_assoc($result);
                     </div>
                 </form>
                 <p>
-                    <?php
-                    if ($_POST['opt'] != '') {
-                        $_SESSION[] = $_POST['opt'];
-                        print_r($_SESSION);
-                        // $a++;
-                    } else {
-                        echo "none <br>";
-                    };
-
-                    // echo $_POST['opt'];
-                    // echo $row['id'];
-                    if ($_POST['opt'] == $row['correct_answer'] && $row['id'] == $id ) {
-                        echo 'right';
-                    } else {
-                        echo 'wrong';
-                    }
-
-                    ?>
+                   
 
                 </p>
             </div>
             <div class="col-md-4">
                 <div class="box">
-                    <h4> <?php echo  date("d/m/y") ?> </h4>
+                    <h4> <?php echo date("d/m/y") ?> </h4>
                     <h5 id="counter"></h5>
                     <hr>
                     <div class="select_question">
@@ -165,7 +154,7 @@ $row = mysqli_fetch_assoc($result);
                 </div>
             </div>
         </div>
-    </div>"
+    </div>
 
 
 </body>
