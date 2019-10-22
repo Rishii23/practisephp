@@ -8,19 +8,20 @@ $subject = $_GET['subject_name'];
 // $sub_name = $_GET['subject_name'];
 
 if ($id == '') {
-    $id = 3;
+    $id = 2;
 };
 
 $Category = $_SESSION["subject"];
 
-$sql_fetch = "SELECT * FROM question_bank WHERE id = $id LIMIT 1";
+$sql_fetch = "SELECT * FROM question_bank WHERE id = '$id' AND subject_name = '$Category' LIMIT 1";
 
+// echo $sql_fetch;
 
 $result = mysqli_query($conn, $sql_fetch);
 
 $row = mysqli_fetch_assoc($result);
 
-mysqli_close($conn);
+// mysqli_close($conn);
 
 ?>
 
@@ -99,18 +100,30 @@ mysqli_close($conn);
                             <div class="row">
                                 <div class="col-md-6 mt-3 pull-left">
                                     <div class="Previous">
-                                        <a class="btn btn-primary" href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id'] - 1; ?>"> previous </a>
+                                        <?php
+                                        $sql_fetch = "SELECT * FROM question_bank WHERE id < '$id' AND subject_name = '$Category' LIMIT 1";
+                                        $result = mysqli_query($conn, $sql_fetch);
+                                        $row = mysqli_fetch_assoc($result);
+
+
+                                        ?>
+                                        <a class="btn btn-primary" href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id']; ?>"> previous </a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mt-3 ">
                                     <div class="Submit  pull-right">
-                                        <a class="btn btn-primary " href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id'] + 1; ?>">Save & Next </a>
+                                        <?php
+
+                                        $sql_fetch = "SELECT * FROM question_bank WHERE id > '$id' AND subject_name = '$Category' LIMIT 1";
+                                        $result = mysqli_query($conn, $sql_fetch);
+                                        $row = mysqli_fetch_assoc($result);
+
+                                        ?>
+                                        <a class="btn btn-primary " href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id']; ?>">Save & Next </a>
                                     </div>
                                 </div>
                             </div>
                         </form>
-
-
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -169,5 +182,11 @@ mysqli_close($conn);
         }
     }, 1000);
 </script>
-
+<script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            $("p").toggle(".green_bck");
+        });
+    });
+</script>
 <?php include 'footer.php' ?>
