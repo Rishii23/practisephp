@@ -3,9 +3,9 @@
 session_start();
 
 include 'connect_db.php' ;
+
 // Start the session
 include 'header.php';
-
 $UserName= $_POST['fname'];
 $Category= $_POST['subject_select'];
 
@@ -14,9 +14,7 @@ $_SESSION["user"] = $UserName;
 $_SESSION["subject"] = $Category;
 
 // echo "Session variables are set.";
-
 if ($_SESSION["user"] != NULL && $_SESSION["subject"] != NULL ){
-
   header("Location:   /practisephp/start_test.php"); 
 }
 ?>
@@ -49,7 +47,5 @@ if ($_SESSION["user"] != NULL && $_SESSION["subject"] != NULL ){
         </div>
     </div>
 </body>
-
-
 
 <?php include 'footer.php' ?>

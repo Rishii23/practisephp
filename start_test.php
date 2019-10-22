@@ -8,19 +8,15 @@ $subject = $_GET['subject_name'];
 // $sub_name = $_GET['subject_name'];
 
 if ($id == '') {
-    $id = 2;
+    $id = 1;
 };
-
 $Category = $_SESSION["subject"];
-
+$score = $_SESSION["score"];
 $sql_fetch = "SELECT * FROM question_bank WHERE id = '$id' AND subject_name = '$Category' LIMIT 1";
 
 // echo $sql_fetch;
-
 $result = mysqli_query($conn, $sql_fetch);
-
 $row = mysqli_fetch_assoc($result);
-
 // mysqli_close($conn);
 
 ?>
@@ -28,7 +24,6 @@ $row = mysqli_fetch_assoc($result);
 <body>
     <?php
     echo $subject . '<br>';
-
     echo $id . '<br>';
 
     if ($sub_name == $Category) {
@@ -36,125 +31,148 @@ $row = mysqli_fetch_assoc($result);
     } else {
         echo "false";
     }
-    // echo '<br> '. $result['id'];
+    // if($ques_no <=5){
+
     ?>
 
     <div class="container">
-        <form>
-            <div class="row">
-                <div class="col-md-8">
+
+        <div class="row">
+            <div class="col-md-8">
+                <form name="answers_option" action="" method="POST">
                     <div class="box">
                         <div class="container">
                             <div class="paper_name">
-                                <h2> <?php echo $_SESSION["subject"]; ?> Exam </h2>
+                                <h2>
+                                    <?php echo $_SESSION["subject"]; ?> Exam
+                                </h2>
                             </div>
                         </div>
 
                         <div class="box question">
-                            <h3><span> Q: </span> <?php echo $row['question'] ?> </h3>
+                            <h3>
+                                <span> Q: </span>
+                                <?php echo $row['question'] ?>
+                            </h3>
                         </div>
 
-                        <form action="">
-                            <div class="box option">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_a'] ?> </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="box option">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span>
-                                            <?php echo $row['option_b'] ?> </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="box option">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_c'] ?> </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="box option">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked><span><?php echo $row['option_d'] ?> </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="correct_answer">
-                                        <p> Correct answer </p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
 
-                                    <div class="wrong_answer">
-                                        <p> Wrong answer </p>
-                                    </div>
+                        <div class="box option">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" id="radio1" name="opt" value="<?php echo $row['option_a'] ?>">
+                                    <span> <?php echo $row['option_a'] ?>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="box option">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" id="radio2" name="opt" value="<?php echo $row['option_b'] ?>">
+                                    <span> <?php echo $row['option_b'] ?>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="box option">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" id="radio3" name="opt" value="<?php echo $row['option_c'] ?>">
+                                    <span> <?php echo $row['option_c'] ?>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="box option">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" id="radio4" name="opt" value=" <?php echo $row['option_d'] ?>">
+                                    <span> <?php echo $row['option_d'] ?>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 mt-3 pull-left">
+                                <div class="Previous">
+                                    <?php
+                                    $sql_fetch = "SELECT * FROM question_bank WHERE id < '$id' AND subject_name = '$Category' LIMIT 1";
+                                    $result = mysqli_query($conn, $sql_fetch);
+                                    $row = mysqli_fetch_assoc($result);
+                                    ?>
+                                    <a class="btn btn-primary" href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id']; ?>"> Previous </a>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 mt-3 pull-left">
-                                    <div class="Previous">
-                                        <?php
-                                        $sql_fetch = "SELECT * FROM question_bank WHERE id < '$id' AND subject_name = '$Category' LIMIT 1";
-                                        $result = mysqli_query($conn, $sql_fetch);
-                                        $row = mysqli_fetch_assoc($result);
-
-
-                                        ?>
-                                        <a class="btn btn-primary" href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id']; ?>"> previous </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mt-3 ">
-                                    <div class="Submit  pull-right">
-                                        <?php
-
-                                        $sql_fetch = "SELECT * FROM question_bank WHERE id > '$id' AND subject_name = '$Category' LIMIT 1";
-                                        $result = mysqli_query($conn, $sql_fetch);
-                                        $row = mysqli_fetch_assoc($result);
-
-                                        ?>
-                                        <a class="btn btn-primary " href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id']; ?>">Save & Next </a>
-                                    </div>
+                            <div class="col-md-4">
+                                <button type="submit" name="submit"> Submit </button>
+                            </div>
+                            <div class="col-md-4 mt-3 ">
+                                <div class="Submit pull-right">
+                                    <?php
+                                    $sql_fetch = "SELECT * FROM question_bank WHERE id > '$id' AND subject_name = '$Category' LIMIT 1";
+                                    $result = mysqli_query($conn, $sql_fetch);
+                                    $row = mysqli_fetch_assoc($result);
+                                    ?>
+                                    <a class="btn btn-primary" href="http://localhost/practisephp/start_test.php?id=<?php echo $row['id']; ?>">Save & Next </a>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                </form>
+                <p>
+                    <?php
+                    if ($_POST['opt'] != '') {
+                        $_SESSION[] = $_POST['opt'];
+                        print_r($_SESSION);
+                        // $a++;
+                    } else {
+                        echo "none <br>";
+                    };
+
+                    // echo $_POST['opt'];
+                    // echo $row['id'];
+                    if ($_POST['opt'] == $row['correct_answer'] && $row['id'] == $id ) {
+                        echo 'right';
+                    } else {
+                        echo 'wrong';
+                    }
+
+                    ?>
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                    <h4> <?php echo  date("d/m/y") ?> </h4>
+                    <h5 id="counter"></h5>
+                    <hr>
+                    <div class="select_question">
+                        <?php
+                        $a = 1;
+                        while ($a <= 20) {
+                            echo '<a> <h3 class="green_bck">' . $a . '</h3> </a>';
+                            $a++;
+                        }
+                        ?>
+
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="box">
-                        <h4> <?php echo  date("d/m/y") ?> </h4>
-                        <h5 id="counter"></h5>
-                        <hr>
-                        <div class="select_question">
-                            <?php
-                            $a = 1;
-                            while ($a <= 20) {
-                                echo '<a> <h3 class="green_bck">' . $a . '</h3> </a>';
-                                $a++;
-                            }
-                            ?>
+                <div class="float-right">
 
-                        </div>
-                    </div>
-                    <div class="float-right">
-
-                        <p>User Name: <?php echo $_SESSION["user"]; ?> </p>
-                    </div>
+                    <p>User Name: <?php echo $_SESSION["user"]; ?> </p>
                 </div>
             </div>
-    </div>
+        </div>
+    </div>"
+
 
 </body>
 
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Oct 19, 2019 14:37:25").getTime();
+    var countDownDate = new Date("Oct 22, 2019 14:37:25").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -172,8 +190,8 @@ $row = mysqli_fetch_assoc($result);
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("counter").innerHTML = hours + "h " +
-            minutes + "m " + seconds + "s ";
+        document.getElementById("counter").innerHTML = hours + "h" +
+            minutes + "m " + seconds + "s";
 
         // If the count down is finished, write some text
         if (distance < 0) {
