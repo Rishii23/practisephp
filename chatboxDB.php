@@ -1,4 +1,4 @@
-<? function mysqli() ?>
+<?php function mysqli() ?>
 <?php
 $host = "localhost";
 $username = "root";
@@ -23,9 +23,7 @@ $sql = "SELECT message FROM newtable where message= $Chat ";
 $result = mysqli_query($conn, $sql);
 
  if (mysqli_num_rows($result) > 0) {
-
     echo $Chat;
-
     die();
    $row = mysqli_fetch_assoc($result);
    

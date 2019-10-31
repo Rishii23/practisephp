@@ -1,4 +1,4 @@
-<? function mysqli() ?>
+<?php function mysqli() {}?>
 <?php
 error_reporting(0);
 
